@@ -1,6 +1,6 @@
 const create = async (params, credentials, shop) => {
     try {
-      let response = await fetch('https://eight-bit-api-f18o.onrender.com/api/shops/by/'+ params.userId, {
+      let response = await fetch('/api/shops/by/'+ params.userId, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -16,7 +16,7 @@ const create = async (params, credentials, shop) => {
   
   const list = async (signal) => {
     try {
-      let response = await fetch('https://eight-bit-api-f18o.onrender.com/api/shops', {
+      let response = await fetch('/api/shops', {
         method: 'GET',
         signal: signal
       })
@@ -28,7 +28,7 @@ const create = async (params, credentials, shop) => {
   
   const listByOwner = async (params, credentials, signal) => {
     try {
-      let response = await fetch('https://eight-bit-api-f18o.onrender.com/api/shops/by/'+params.userId, {
+      let response = await fetch('/api/shops/by/'+params.userId, {
         method: 'GET',
         signal: signal,
         headers: {
@@ -44,7 +44,7 @@ const create = async (params, credentials, shop) => {
   
   const read = async (params, signal) => {
     try {
-      let response = await fetch('https://eight-bit-api-f18o.onrender.com/api/shop/' + params.shopId, {
+      let response = await fetch('/api/shop/' + params.shopId, {
         method: 'GET',
         signal: signal,
       })
@@ -56,7 +56,7 @@ const create = async (params, credentials, shop) => {
   
   const update = async (params, credentials, shop) => {
     try {
-      let response = await fetch('https://eight-bit-api-f18o.onrender.com/api/shops/' + params.shopId, {
+      let response = await fetch('/api/shops/' + params.shopId, {
         method: 'PUT',
         headers: {
           'Accept': 'application/json',
@@ -72,7 +72,7 @@ const create = async (params, credentials, shop) => {
   
   const remove = async (params, credentials) => {
     try {
-      let response = await fetch('https://eight-bit-api-f18o.onrender.com/api/shops/' + params.shopId, {
+      let response = await fetch('/api/shops/' + params.shopId, {
         method: 'DELETE',
         headers: {
           'Accept': 'application/json',

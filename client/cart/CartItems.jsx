@@ -16,15 +16,12 @@ const useStyles = makeStyles(theme => ({
   card: {
     margin: '24px 0px',
     padding: '16px 40px 60px 40px',
-    backgroundColor: '#ffffff',
-    fontFamily: 'Arial, Helvetica, sans-serif',
+    backgroundColor: '#80808017'
   },
   title: {
-    color: '#270057',
-    fontSize: '1.5em',
-    fontFamily: 'RetroGaming',
-    textAlign: 'left',
-    marginBottom: '15px'
+    margin: theme.spacing(2),
+    color: theme.palette.openTitle,
+    fontSize: '1.2em'
   },
   price: {
     color: theme.palette.text.secondary,
@@ -34,85 +31,63 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     marginTop: 0,
-    width: 50,
+    width: 50
   },
   productTitle: {
     fontSize: '1.15em',
-    marginBottom: '5px',
-    fontWeight: 'bold',
+    marginBottom: '5px'
   },
   subheading: {
     color: 'rgba(88, 114, 128, 0.67)',
     padding: '8px 10px 0',
     cursor: 'pointer',
-    display: 'inline-block',
+    display: 'inline-block'
   },
   cart: {
     width: '100%',
-    display: 'inline-flex',
-    backgroundColor: '#eeeeee',
-    marginBottom: '25px',
+    display: 'inline-flex'
   },
   details: {
     display: 'inline-block',
     width: "100%",
-    padding: "4px",
+    padding: "4px"
   },
   content: {
     flex: '1 0 auto',
-    padding: '16px 8px 0px',
+    padding: '16px 8px 0px'
   },
   cover: {
     width: 160,
     height: 125,
-    margin: '8px',
+    margin: '8px'
   },
   itemTotal: {
     float: 'right',
     marginRight: '40px',
-    fontSize: '1.2em',
-    color: '#270057',
-    fontWeight: 'bold',
+    fontSize: '1.5em',
+    color: 'rgb(72, 175, 148)'
   },
   checkout: {
     float: 'right',
-    margin: '24px',
+    margin: '24px'
   },
   total: {
-    verticalAlign: 'bottom',
-    fontSize: '1.5em',
-    color: '#270057',
-    marginRight: '15px',
-    fontWeight: 'bold',
+    fontSize: '1.2em',
+    color: 'rgb(53, 97, 85)',
+    marginRight: '16px',
+    fontWeight: '600',
+    verticalAlign: 'bottom'
   },
   continueBtn: {
-    marginLeft: '10px',
-  },
-  continueShoppingBtn: {
-    color: '#ffffff',
-    backgroundColor: '#00ACB9',
-    '&:hover': {
-      backgroundColor: '#270057',
-    }
+    marginLeft: '10px'
   },
   itemShop: {
     display: 'block',
     fontSize: '0.90em',
-    color: '#78948f',
+    color: '#78948f'
   },
   removeButton: {
-    fontSize: '0.8em',
-    '&:hover': {
-      color: '#ffffff',
-      backgroundColor: '#444444',
-    },
-  },
-  checkoutBtn: {
-    color: '#ffffff',
-    backgroundColor: '#B900A4',
-    '&:hover': {
-      backgroundColor: '#270057',
-    },
+    fontSize: '0.8em'
   }
 }))
 
@@ -193,13 +168,13 @@ export default function CartItems (props) {
         <div className={classes.checkout}>
           <span className={classes.total}>Total: ${getTotal()}</span>
           {!props.checkout && (auth.isAuthenticated()?
-            <Button className={classes.checkoutBtn} variant="contained" onClick={openCheckout}>Checkout</Button>
+            <Button color="secondary" variant="contained" onClick={openCheckout}>Checkout</Button>
             :
             <Link to="/signin">
               <Button color="primary" variant="contained">Sign in to checkout</Button>
             </Link>)}
           <Link to='/' className={classes.continueBtn}>
-            <Button className={classes.continueShoppingBtn} variant="contained">Continue Shopping</Button>
+            <Button variant="contained">Continue Shopping</Button>
           </Link>
         </div>
       </span>) :
